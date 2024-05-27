@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch('https://api.coinpaprika.com/v1/tickers/btc-bitcoin');
             const data = await response.json();
-            const athPrice = data.quotes.USD.ath_price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-            const currentPrice = data.quotes.USD.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            const athPrice = data.quotes.USD.ath_price.toLocaleString('en-US', { style: 'currency', currency: 'USD' , maximumFractionDigits: 0});
+            const currentPrice = data.quotes.USD.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' , maximumFractionDigits: 0});
 
             priceElement.textContent = athPrice;
 
