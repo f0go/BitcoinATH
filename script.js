@@ -8,7 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch('https://api.coinpaprika.com/v1/tickers/btc-bitcoin');
             const data = await response.json();
-            priceElement.textContent = "$" + Math.round(data.quotes.USD.ath_price);
+            const athPrice = data.quotes.USD.ath_price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            const currentPrice = data.quotes.USD.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+
+            priceElement.textContent = athPrice;
 
             let date = new Date(data.quotes.USD.ath_date);
 
@@ -29,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let days = Math.floor(difference / (1000 * 60 * 60 * 24))
 
             dateElement.textContent = `ATH Date: ${formattedDate}`
-            currentElement.textContent = `Current Price: $${Math.round(data.quotes.USD.price)}`
+            currentElement.textContent = `Current Price: ${currentPrice}`
             daysElement.textContent = `Days since ATH: ${days}`
             percentElement.textContent = `Percent from ATH: ${data.quotes.USD.percent_from_price_ath}%`
         } catch (error) {
@@ -39,5 +42,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     fetchprice();
 });
-
-
