@@ -1,0 +1,30 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Nunito", sans-serif;
+    background-color: black;
+    color: orange;
+}
+
+.container {
+    text-align: center;
+}
+
+.price {
+    font-size: 20vw;
+    font-weight: bold;
+    padding-bottom: 30px;
+    font-weight: 1000;
+}
+
+.row {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 30px;
+}

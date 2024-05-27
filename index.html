@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View Bitcoin's all-time high (ATH) and compare it with the current price."/>
+    <meta property="og:description" content="View Bitcoin's all-time high (ATH) and compare it with the current price."/>
+    <title>Bitcoin ATH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyC54Ww5ht7K413Uxhb3pDqCYdsRjJF6oos",
+        authDomain: "btcathapp.firebaseapp.com",
+        projectId: "btcathapp",
+        storageBucket: "btcathapp.appspot.com",
+        messagingSenderId: "637711986802",
+        appId: "1:637711986802:web:8a4a6fa93dbee7225052eb",
+        measurementId: "G-NRMFH6ZNHE"
+      };
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+    <div class="container">
+        <div id="price" class="price"></div>
+        <div class="row">
+            <span id="current"></span>
+            <span id="date"></span>
+            <span id="percent"></span>
+            <span id="days"></span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
