@@ -28,3 +28,45 @@ body, html {
     grid-template-columns: repeat(2, 2fr);
     gap: 30px;
 }
+
+.investment-calculator {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.investment-calculator h2 {
+    margin-bottom: 10px;
+}
+
+.investment-calculator label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.investment-calculator input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.investment-calculator button {
+    padding: 10px 20px;
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.investment-calculator button:hover {
+    background-color: darkorange;
+}
+
+#investment-result {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
